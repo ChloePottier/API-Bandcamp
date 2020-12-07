@@ -7,5 +7,6 @@
 </head>
 <body>
     <?php require 'curl.php'; ?>
+  
 </body>
 </html>
