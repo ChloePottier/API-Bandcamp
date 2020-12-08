@@ -16,33 +16,32 @@
     $list_my_bands = file_get_contents("http://localhost/api-bandcamp/my_bands.json"); //
     // // on décode le fichier json dans une var
     $list_my_bands = json_decode($list_my_bands, true);
+    
     // var_dump($list_my_bands); 
     // echo'<pre>';
     // print_r($list_my_bands);
     // echo '</pre>';
 
-    echo "affichage du tableau avec la boucle for<br/>";
+    echo "<h3>Affichage du tableau avec la boucle for</h3>";
     $membersBands = $list_my_bands['bands'][2]['member_bands'];
- ;
-    $ArrayCount = count($membersBands);
-    // echo $ArrayCount; // =25
-    for ($i = 0; $i <= $ArrayCount - 1; $i++) { // on compte la taille du tableau1 = 4
-        // $i est égale à l'index 0; $i inférieur ou égale à la taille du tableau - 1
-        //(pour que l'on puisse aller jusqu' l'index 3 sinon on aura une ligne en plus); on incrément de 1.
-        // La boucle va donc traiter chaque ligne du tableau et va s'arrêter à la dernière ligne, index 3
-        echo $i.'<br />';
-        foreach ($membersBands as $key => $key2){
-            echo "<br />";
-
-            foreach($key2 as $key3 => $value){
-                
-                echo "{$key3} => {$value} <br />";
-            }
-        }
-    }
-   // echo'<pre>';
+    $ArrayCount = count($membersBands);// on compte le nombre d'entrée dans le tableau
+    //echo $ArrayCount; // 25 au 08 12 2020
+    // echo '<pre>';
     // print_r($membersBands);
-    // echo '</pre>'    ?>
+    // echo '</pre>';
+    for ($i = 0; $i <= ($ArrayCount - 1); $i++) {
+         echo  "<h4>" .$membersBands[$i]['name'] . "</h4> Id du groupe = " . $membersBands[$i]['band_id'] . "<br />";
+         $subdomain = $membersBands[$i]['subdomain'];
+         $band_id = $membersBands[$i]['band_id'];
+         $band_name = $membersBands[$i]['name'];
+         //création du nouveau tableau
+        $arrayBands =[$subdomain, $band_id, $band_name];
+        // var_dump($arrayBands);
+
+    }
+       
+
+    ?>
 
 </body>
 
