@@ -14,13 +14,8 @@ $headr[] = 'client_secret:' . $client_secret;
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headr); // tableau $headr est envoyé au header avec la méthode http
 curl_setopt($curl, CURLOPT_POST, true); // cURL post les données du header
 $data = curl_exec($curl);//exécute une session cURl (la requête)
-// if ($data === false) {
-//     var_dump(curl_error($curl . 'ca marche pas'));
-// } else {
-//     var_dump($data);
- 
-// }
 curl_close($curl); // on ferme la session cURL
+include 'my_bands.php';
 ?>
 <h2>get_merch_details</h2>
 <?php
