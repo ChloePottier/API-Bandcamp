@@ -4,9 +4,9 @@
     $list_my_bands = json_decode($list_my_bands, true);
     
     // var_dump($list_my_bands); 
-    // echo'<pre>';
-    // print_r($list_my_bands);
-    // echo '</pre>';
+    echo'<pre>';
+    print_r($list_my_bands);
+    echo '</pre>';
 
     echo "<h3>Affichage du tableau avec la boucle for</h3>";
     $membersBands = $list_my_bands['bands'][2]['member_bands'];
@@ -15,16 +15,22 @@
     // echo '<pre>';
     // print_r($membersBands);
     // echo '</pre>';
+    //création du nouveau tableau des résultats
+    $arrayBands = [];
     for ($i = 0; $i <= ($ArrayCount - 1); $i++) {
-         echo  "<h4>" .$membersBands[$i]['name'] . "</h4> Id du groupe = " . $membersBands[$i]['band_id'] . "<br />";
+        
+        $GLOBALS['band_id'] = $membersBands[$i]['band_id'];
+        //  echo  "<h4>" .$membersBands[$i]['name'] . "</h4> Id du groupe = " . $GLOBALS['band_id'] . "<br />";
          $subdomain = $membersBands[$i]['subdomain'];
-         $band_id = $membersBands[$i]['band_id'];
          $band_name = $membersBands[$i]['name'];
          //création du nouveau tableau
-        $arrayBands =[$subdomain, $band_id, $band_name];
-        // var_dump($arrayBands);
-
+        $arrayBands[] = [$subdomain, $GLOBALS['band_id'], $band_name];
+        // $arrayBands[] = $GLOBALS['band_id']; 
+        // include 'get_merch_details.php';
     }
-       
+    //   echo '<pre>';
+    // print_r($arrayBands);
+    // echo '</pre>';
+    // echo $arrayBands[11]; //914283197 High tone
 
     ?>

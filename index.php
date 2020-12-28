@@ -9,24 +9,24 @@
 
 <body>
     <?php
-    require 'curl.php'; 
-    ?>
-    <h2>my_bands</h2>
-    
-      <h2>get_merch details</h2>
-    <?php
-    $list_merch_details = file_get_contents("http://localhost/api-bandcamp/get_merch_details_JFX.json"); //
-    // // on décode le fichier json dans une var
-    $list_merch_details = json_decode($list_merch_details, true);
-    
-    // var_dump($list_merch_details); 
-    echo'<pre>';
-    print_r($list_merch_details);
-    echo '</pre>';
+    // require 'curl.php'; 
+    require 'access-token.php';
+    // include 'my_bands.php';
 
-    echo "<h3>Affichage du tableau avec la boucle for</h3>";
-    // $membersBands = $list_merch_details['bands'][2]['member_bands'];
-    // $ArrayCount = count($membersBands);// on compte le nombre d'entrée dans le tableau
+    $data = file_get_contents("get_merch_details_JFX.json");
+    $data= json_decode($data);
+    echo '<pre>';
+    // print_r($data->items[0]->title);//title = totebag 
+    // print_r($data);
+    echo '</pre>'; 
+    $count_data = count($data->items) -1;//longueur tableau
+
+    for ($i = 0; $i <= $count_data; $i++){
+        echo $data->items[$i]->title;
+    }
+   
+
+
     ?>
 
 </body>
