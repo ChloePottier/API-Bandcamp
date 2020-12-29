@@ -2,16 +2,9 @@
     $list_my_bands = file_get_contents("http://localhost/api-bandcamp/my_bands.json"); //
     // // on décode le fichier json dans une var
     $list_my_bands = json_decode($list_my_bands, true);
-    
-    // var_dump($list_my_bands); 
-    echo'<pre>';
-    print_r($list_my_bands);
-    echo '</pre>';
-
     echo "<h3>Affichage du tableau avec la boucle for</h3>";
     $membersBands = $list_my_bands['bands'][2]['member_bands'];
     $ArrayCount = count($membersBands);// on compte le nombre d'entrée dans le tableau
-    //echo $ArrayCount; // 25 au 08 12 2020
     // echo '<pre>';
     // print_r($membersBands);
     // echo '</pre>';
@@ -28,9 +21,6 @@
         // $arrayBands[] = $GLOBALS['band_id']; 
         // include 'get_merch_details.php';
     }
-    //   echo '<pre>';
-    // print_r($arrayBands);
-    // echo '</pre>';
     // echo $arrayBands[11]; //914283197 High tone
-
+    var_dump($arrayBands);
     ?>
