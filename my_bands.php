@@ -13,14 +13,11 @@
     for ($i = 0; $i <= ($ArrayCount - 1); $i++) {
         
         $GLOBALS['band_id'] = $membersBands[$i]['band_id'];
-        //  echo  "<h4>" .$membersBands[$i]['name'] . "</h4> Id du groupe = " . $GLOBALS['band_id'] . "<br />";
          $subdomain = $membersBands[$i]['subdomain'];
          $band_name = $membersBands[$i]['name'];
          //création du nouveau tableau
         $arrayBands[] = [$subdomain, $GLOBALS['band_id'], $band_name];
-        // $arrayBands[] = $GLOBALS['band_id']; 
-        // include 'get_merch_details.php';
     }
     // echo $arrayBands[11]; //914283197 High tone
-    var_dump($arrayBands);
+    // var_dump($arrayBands);
     ?>
