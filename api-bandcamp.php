@@ -96,7 +96,7 @@ for ($i5 = 0; $i5 <= $count_products; $i5++) {
         global $wpdb;
         $wpdb->insert($tablePosts, array(
             'ID' => $post_id,
-            'post_author' => "ChloeStoreAdmin",
+            'post_author' => 3,
             'post_date' => $today,
             'post_date_gmt' => $today,
             'post_content' =>  'Groupe / Label : '.$uniqueProducts[$i5][2].' Image URL = ' . $image_url . 'Id bandcamp = ' . $uniqueProducts[$i5][1],
