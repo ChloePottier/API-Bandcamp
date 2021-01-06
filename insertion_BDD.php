@@ -19,7 +19,11 @@ for ($i5 = 0; $i5 <= $count_products; $i5++) {
         $comment_status = 'closed';
         $ping_status = 'closed';
         $post_password = '';
-        $post_name = urlencode($post_title);
+        // $post_name = $post_title;
+        $post_name = strtolower(
+            str_replace(array('.',',','?','!','¡','/','(',')','--'),'',str_replace(array('á','à','â','ã','ª','ä','Á','À','Â','Ã','Ä'),'a',str_replace(array(" ","'",".","&"), '-', $post_title)))
+        );        
+        echo $post_name. '<br />';
         $to_ping = '';
         $pinged = '';
         $post_content_filtered = '';
