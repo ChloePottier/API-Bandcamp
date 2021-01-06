@@ -21,6 +21,7 @@
     echo '<pre><h2>Tous les produits avec tout le détails</h2>';
     print_r($arrayProductsAll);
     echo '</pre>';
+  
 
     //ajouter ces data dans la BDD wordpress
     
