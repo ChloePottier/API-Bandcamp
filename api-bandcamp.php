@@ -40,7 +40,7 @@ for ($i = 0; $i <= $count_data; $i++){
     if ( $member_band_id == 3390641849){
         $band_name = 'Jarring Effects label';
     }
-    // $arrayProductsAll[] = [$post_id,$member_band_id, $band_name,$album_title,$image_url, $title, $price];  //post_type = 'product'
+    // $arrayProductsAll[] = $member_band_id, $band_name,$album_title,$image_url, $title, $price];  //post_type = 'product'
     $arrayProducts[] = [$post_id,$member_band_id, $band_name,$album_title,$image_url];  //post_type = 'product'
     $post_id++;
    }
@@ -96,10 +96,10 @@ for ($i5 = 0; $i5 <= $count_products; $i5++) {
         global $wpdb;
         $wpdb->insert($tablePosts, array(
             'ID' => $post_id,
-            'post_author' => 3,
+            'post_author' => 1,
             'post_date' => $today,
             'post_date_gmt' => $today,
-            'post_content' =>  'Groupe / Label : '.$uniqueProducts[$i5][2].' Image URL = ' . $image_url . 'Id bandcamp = ' . $uniqueProducts[$i5][1],
+            'post_content' =>  'Groupe / Label : '.$uniqueProducts[$i5][2].' Image URL = ' . $image_url . ' Id bandcamp = ' . $uniqueProducts[$i5][1],
             'post_title' => $post_title,
             'post_excerpt' => '',
             'post_status' => 'publish',
@@ -121,4 +121,5 @@ for ($i5 = 0; $i5 <= $count_products; $i5++) {
         ));
     }//endif
 }//endfor
+
 die;

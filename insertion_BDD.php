@@ -33,31 +33,31 @@ for ($i5 = 0; $i5 <= $count_products; $i5++) {
         $post_type = 'product';
         $post_mime_type = '';
         $comment_count = 0;
-        // $tab = array(
-        //     'ID' => $post_id,
-        //     'post_author' => "chloeStoreAdmin",
-        //     'post_date' => $today,
-        //     'post_date_gmt' => $today,
-        //     'post_content' =>  'Image URL = ' . $image_url . 'Id bandcamp = ' . $uniqueProducts[$i5][1],
-        //     'post_title' => $post_title,
-        //     'post_excerpt' => '',
-        //     'post_status' => 'publish',
-        //     'comment_status' => 'closed',
-        //     'ping_status' => 'closed',
-        //     'post_password' => '',
-        //     'post_name' =>  $post_name,
-        //     'to_ping' => '',
-        //     'pinged' => '',
-        //     'post_modified' => $today,
-        //     'post_modified_gmt' => $today,
-        //     'post_content_filtered' => '',
-        //     'post_parent' => 0,
-        //     'guid' => 'https://jfxstore.eu/?post_type=product&p=' . $post_id,
-        //     'menu_order' => 0,
-        //     'post_type' => 'product',
-        //     'post_mime_type' => '',
-        //     'comment_count' => 0
-        // );
+        $tab = array(
+            'ID' => $post_id,
+            'post_author' => 1,
+            'post_date' => $today,
+            'post_date_gmt' => $today,
+            'post_content' =>  'Image URL = ' . $image_url . 'Id bandcamp = ' . $uniqueProducts[$i5][1],
+            'post_title' => $post_title,
+            'post_excerpt' => '',
+            'post_status' => 'publish',
+            'comment_status' => 'closed',
+            'ping_status' => 'closed',
+            'post_password' => '',
+            'post_name' =>  $post_name,
+            'to_ping' => '',
+            'pinged' => '',
+            'post_modified' => $today,
+            'post_modified_gmt' => $today,
+            'post_content_filtered' => '',
+            'post_parent' => 0,
+            'guid' => 'https://jfxstore.eu/?post_type=product&p=' . $post_id,
+            'menu_order' => 0,
+            'post_type' => 'product',
+            'post_mime_type' => '',
+            'comment_count' => 0
+        );
         // echo '<pre>';
         // print_r($tab);
         // echo '</pre>';

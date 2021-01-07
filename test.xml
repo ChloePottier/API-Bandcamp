@@ -1,0 +1,15 @@
+<Product>
+    <Post_id>$post_id</Post_id>
+    <Band_name>$band_name</Band_name>
+	<Product_Name>$album_title</Product_Name>
+	<Category>High Tone</Category>
+	<Image_URL>$image_url</Image_URL>
+	<Extended_Xml_Attributes>
+		<variants>
+			<variant>
+				<format>$title</format>
+				<price>$price</price>
+			<variant/>
+		</variants>
+	</Extended_Xml_Attributes>
+</Product>
