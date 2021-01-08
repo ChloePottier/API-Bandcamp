@@ -13,7 +13,6 @@ $xml->openUri('file:///jfx_bandcamp_products.xml'); // créer dans le fichier ci
 $xml->startDocument('1.0', 'utf-8'); // Pour démarrer le document (créer la balise ouverte XML): 
     //boucle pour le tableau total
     for ($i = 0; $i <= $count_data; $i++){
-        $xml->startElement('Product');
         // $xml->writeAttribute('bar', 'baz');
             
        
@@ -33,6 +32,8 @@ $xml->startDocument('1.0', 'utf-8'); // Pour démarrer le document (créer la ba
         }
 
         for ($i = 0; $i <= $count_data; $i++) {
+            $xml->startElement('Product');
+
             if (isset($data->items[$i]->album_title) && $data->items[$i]->album_title === $album_title) {
                 $price = $data->items[$i]->price;
                 $title =  $data->items[$i]->title ;
@@ -40,7 +41,33 @@ $xml->startDocument('1.0', 'utf-8'); // Pour démarrer le document (créer la ba
                 $album_title = $data->items[$i]->album_title;
                 $arrayProducts[$album_title]['variants'] += [$title => ['format' => $title, 'prix' => $price]];  //post_type = 'product'
                 // include 'construct_xml.php';
-                
+                $xml->startElement('Post_id');//ouverture de la balise
+                    $xml->writeCdata($post_id);//Data de la balise
+                $xml->endElement();// fermeture de la balise
+                $xml->startElement('Band_name');
+                    $xml->writeCdata($band_name);
+                $xml->endElement();
+                $xml->startElement('Product_name');
+                    $xml->writeCdata($album_title);
+                $xml->endElement();
+                $xml->startElement('Category');
+                    $xml->writeCdata($band_name);
+                $xml->endElement();
+                $xml->startElement('Img_url');
+                    $xml->writeCdata($image_url);
+                $xml->endElement();
+                $xml->startElement('Extended_Xml_Attributes');
+                    $xml->startElement('Variants');
+                        $xml->startElement('Variant');
+                            $xml->startElement('Format');
+                                $xml->writeCdata($title);
+                            $xml->endElement();
+                            $xml->startElement('Price');
+                                $xml->writeCdata($price);
+                            $xml->endElement();
+                        $xml->endElement();
+                    $xml->endElement();
+                $xml->endElement();
 
             } else {
                 $member_band_id = $data->items[$i]->member_band_id ;// a comparer avec band_id pour le nom de l'artiste
@@ -50,27 +77,48 @@ $xml->startDocument('1.0', 'utf-8'); // Pour démarrer le document (créer la ba
                 $album_title = $data->items[$i]->album_title;
                 $arrayProducts[$album_title] = ['post_id' => $post_id, 'band_id' => $member_band_id, 'groupe' => $band_name,'product_name' => $album_title,'image_url'=> $image_url, 'variants' => [$title => ['format' => $title, 'prix' => $price]]];
                 // include 'construct_xml.php';
-                $xml->startElement('Post_id');
-                    $xml->writeCdata($post_id);
-                $xml->endElement();
-                $xml->startElement('band_name');
+                $xml->startElement('Post_id');//ouverture de la balise
+                    $xml->writeCdata($post_id);//Data de la balise
+                $xml->endElement();// fermeture de la balise
+                $xml->startElement('Band_name');
                     $xml->writeCdata($band_name);
+                $xml->endElement();
+                $xml->startElement('Product_name');
+                    $xml->writeCdata($album_title);
+                $xml->endElement();
+                $xml->startElement('Category');
+                    $xml->writeCdata($band_name);
+                $xml->endElement();
+                $xml->startElement('Img_url');
+                    $xml->writeCdata($image_url);
+                $xml->endElement();
+                $xml->startElement('Extended_Xml_Attributes');
+                    $xml->startElement('Variants');
+                        $xml->startElement('Variant');
+                            $xml->startElement('Format');
+                                $xml->writeCdata($title);
+                            $xml->endElement();
+                            $xml->startElement('Price');
+                                $xml->writeCdata($price);
+                            $xml->endElement();
+                        $xml->endElement();
+                    $xml->endElement();
                 $xml->endElement();
 
                 $post_id++;
                 
             }
+            $xml->endElement();
 
         }
         // $arrayProductsAll[] = [$member_band_id, $band_name,$album_title,$image_url, $title, $price];  //post_type = 'product'
-        $xml->endElement();
         ?>
 
         <?php
        } 
 // <Product>
-//     <Post_id>$post_id</Post_id>
-//     <Band_name>$band_name</Band_name>
+//  <Post_id>$post_id</Post_id>
+//  <Band_name>$band_name</Band_name>
 // 	<Product_Name>$album_title</Product_Name>
 // 	<Category>High Tone</Category>
 // 	<Image_URL>$image_url</Image_URL>
