@@ -12,5 +12,6 @@ https://bandcamp.com/developer
 Toutes les informations ont été enregistrées pour ne pas avoir à regénérer sans arrêt son acces token et son refresh token.
 7- Convertir le fichier my_bands.json en tableau : my_bands.php.
 8- Convertir le fichier get_merch_details.json en tableau : array_produts.php.
-9- Insérer ses informations en base de données.
+9- Créer le fichier XML
+10- importer avec le plugin WP All Import
 
