@@ -13,6 +13,7 @@
     // require 'access-token.php';
     //tableau des groupes
     include 'my_bands.php';
+
     //tableau des produits par groupe
     include 'array_products.php';
 
