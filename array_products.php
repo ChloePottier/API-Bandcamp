@@ -50,9 +50,9 @@
             }
         }
     }
-       echo '<pre><h2>Tous les produits avec tout le détails</h2>';
-    print_r($arrayProducts);
-    echo '</pre>';
+    //    echo '<pre><h2>Tous les produits avec tout le détails</h2>';
+    // print_r($arrayProducts);
+    // echo '</pre>';
 include 'construct_xml.php';
 
     ?>

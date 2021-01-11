@@ -14,7 +14,8 @@
     //tableau des groupes
     include 'my_bands.php';
     //tableau des produits par groupe
-    include 'array_products.php';
+    include 'array_productsAll.php';
+    include 'array_for_xml.php';
 
     // include 'insertion_BDD.php'
     //ajouter ces data dans la BDD wordpress
