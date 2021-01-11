@@ -1,5 +1,4 @@
 <?php
-require 'array_productsAll.php';
 $count_data = count($arrayProductsAll) - 1;
 $post_id = 4900;
 for ($i = 0; $i <= $count_data; $i++) {
@@ -22,7 +21,7 @@ for ($i = 0; $i <= $count_data; $i++) {
         else:
         $album_title = $arrayProductsAll[$i][2];
         endif;
-        $array_for_xml[$album_title] = ['post_id' => $post_id, 'band_id' => $member_band_id,'groupe' => $band_name, 'product_name' => $album_title,'image_url'=> $image_url, 'variants' => [ $title => ['format' => $title, 'price' => $price]]];
+        $array_for_xml[$album_title] = ['post_id' => $post_id, 'band_id' => $member_band_id,'groupe' => $band_name, 'product_name' => $album_title,'image_url'=> $image_url, 'variants' => [ $title => ['format' => $title, 'prix' => $price]]];
         $post_id++;
     }
 

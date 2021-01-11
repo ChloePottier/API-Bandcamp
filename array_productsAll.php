@@ -28,7 +28,7 @@
         $arrayProductsAll[] = [$member_band_id, $band_name,$album_title,$image_url, $title, $price]; 
         $post_id++;
        }
-       echo '<pre><h2>Tous les produits avec tout le détails</h2>';
+       echo '<pre><h2>Tous les produits provenant de Bandcamp</h2>';
        print_r($arrayProductsAll);
        echo '</pre>';
     ?>
