@@ -24,17 +24,8 @@
         if ( $member_band_id == 3390641849){
             $band_name = 'Jarring Effects label';
         }
-        // echo 'Member id : '. $member_band_id .'<br />' ;// a comparer avec band_id pour le nom de l'artiste
-        // echo 'Titre : '. $title .'<br />' ; // attribut du produit ???
-        // echo 'Titre de l\'album : '. $album_title .'<br />' ;
-        // echo 'Prix : '. $price .' € <br />' ;
-        // echo '<img src="'.$image_url.'"/>'; //img article
-        // echo '<br />********************<br />';
-
         //tableau total
-        $arrayProductsAll[] = [$member_band_id, $band_name,$album_title,$image_url, $title, $price];  //post_type = 'product'
-        // tableau dont il faudra suppr les doublons
-        // $arrayProducts[] = [$post_id,$member_band_id, $band_name,$album_title,$image_url];  //post_type = 'product'
+        $arrayProductsAll[] = [$member_band_id, $band_name,$album_title,$image_url, $title, $price]; 
         $post_id++;
        }
        echo '<pre><h2>Tous les produits avec tout le détails</h2>';

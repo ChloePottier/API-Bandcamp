@@ -27,6 +27,8 @@ for ($i = 0; $i <= $count_data; $i++) {
     }
 
 }
+include 'construct_xml.php';
+
 // var_dump($array_for_xml);
 echo '<pre><h2>array for xml</h2>';
 print_r($array_for_xml);

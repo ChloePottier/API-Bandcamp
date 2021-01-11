@@ -4,7 +4,7 @@ $xml = new XMLWriter(); // Instanciez un objet XMLWriter
 $xml->openUri('file:///jfx_bandcamp_products.xml'); // créer dans le fichier ci dessus
 $xml->startDocument('1.0', 'utf-8'); // Pour démarrer le document (créer la balise ouverte XML)
 $xml->startElement('root');
-foreach ($arrayProducts as $v1) {
+foreach ($array_for_xml as $v1) {
     $xml->startElement('Product');
         $xml->startElement('Post_id');//ouverture de la balise
             $xml->writeCdata($v1['post_id']);//Data de la balise
