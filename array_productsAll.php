@@ -1,9 +1,6 @@
 <?php
     $data = file_get_contents("get_merch_details_JFX.json");
     $data= json_decode($data);
-    // echo '<pre>';
-    // print_r($arrayBands);
-    // echo '</pre>'; 
     $count_data = count($data->items) -1;//longueur tableau
     $arrayProducts = [];
     $post_id = 4900;
@@ -24,20 +21,11 @@
         if ( $member_band_id == 3390641849){
             $band_name = 'Jarring Effects label';
         }
-        // echo 'Member id : '. $member_band_id .'<br />' ;// a comparer avec band_id pour le nom de l'artiste
-        // echo 'Titre : '. $title .'<br />' ; // attribut du produit ???
-        // echo 'Titre de l\'album : '. $album_title .'<br />' ;
-        // echo 'Prix : '. $price .' € <br />' ;
-        // echo '<img src="'.$image_url.'"/>'; //img article
-        // echo '<br />********************<br />';
-
         //tableau total
-        $arrayProductsAll[] = [$member_band_id, $band_name,$album_title,$image_url, $title, $price];  //post_type = 'product'
-        // tableau dont il faudra suppr les doublons
-        // $arrayProducts[] = [$post_id,$member_band_id, $band_name,$album_title,$image_url];  //post_type = 'product'
+        $arrayProductsAll[] = [$member_band_id, $band_name,$album_title,$image_url, $title, $price]; 
         $post_id++;
        }
-       echo '<pre><h2>Tous les produits avec tout le détails</h2>';
-       print_r($arrayProductsAll);
+       echo '<pre><h2>Tous les produits provenant de Bandcamp</h2>';
+       print_r($data);
        echo '</pre>';
     ?>

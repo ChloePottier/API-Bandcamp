@@ -1,0 +1,12 @@
+body{font-family: Arial, Helvetica, sans-serif;}
+.container-fluid{width: 100%;    height: auto;}
+.container{width: 80%; margin: 0 auto;}
+.row{display: flex; flex-direction: row; margin:  0; padding: 0;}
+.band-name{width:20%; font-weight: 800;}
+.album_title{font-weight: 600;}
+.album_title,.title{width: 30%;}
+.title{width: 30%; padding: 5px 0;}
+.border-bottom{border-bottom: solid 1px #cccccc;}
+.grey{background-color: #ebe7e7;}
+.black{background-color: black; color: white;}
+.titre{font-weight: 800; font-size: 1.3rem;}
